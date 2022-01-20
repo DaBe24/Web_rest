@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    h1= title
+
+    form(method='POST' action='')
+        div.form-group
+            label(for='dish') Название блюда:
+            input#dish.form-control(type='text', placeholder='Название блюда' name='dish' required='true' value=(undefined===menu ? '' : menu.dish) )
+        div.form-group
+            label(for='description') Описание:
+            input#description.form-control(type='text', placeholder='Описание' name='description' value=(undefined===menu ? '' : menu.description) required='true')
+        div.form-group
+            label(for='price') Цена:
+            input#price.form-control(type='int', placeholder='Цена' name='price' value=(undefined===menu ? '' : menu.price) required='true')
+        button.btn.btn-primary(type='submit') Отправить
+
+    if exect
+        d #{exect}
+
+    if errors
+        ul
+            for error in errors
+                li!= error.msg

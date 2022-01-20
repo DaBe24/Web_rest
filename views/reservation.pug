@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    h1= title
+
+    form(method='POST' action='')
+        div.form-group
+            label(for='n_table') Номер столика:
+            input#n_table.form-control(type='int', placeholder='введите номер столика' name='n_table' required='true' value=(undefined===reservation ? '' : reservation.n_table) )
+        div.form-group
+            label(for='name') Ваше имя:
+            input#name.form-control(type='text', placeholder='введите имя' name='name' required='true' value=(undefined === reservation ? '' : reservation.name) )
+        div.form-group
+            label(for='a_date') Даты бронирования:
+            input#a_date.form-control(type='date', name='a_date' required='true' value=(''))
+        button.btn.btn-primary(type='submit') Отправить
+
+    if exect
+        d Успешно зарезервировано на дату - #{exect}
+
+    if errors
+        ul
+            for error in errors
+                li!= error.msg

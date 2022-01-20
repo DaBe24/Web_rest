@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    h1= title
+
+    d Доступное меню для заказа:
+
+    ul
+    each menu in menu_list
+        li
+            a(href=menu.url) #{menu.dish} - (#{menu.price} единиц независимой валюты)
+    else
+        li В меню ничего нет.
