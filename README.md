@@ -3,4 +3,4 @@
 Бессмертных Даниил Сергеевич КБ-301
 
 Деплой:
-https://webdabe.herokuapp.com/
+https://dabeweb.herokuapp.com/catalog
